@@ -3,6 +3,7 @@ package ru.netology.manager;
 import ru.netology.domain.PurchaseItem;
 
 class FilmManager {
+    
     private PurchaseItem[] items = new PurchaseItem[0];
 
     public void add(PurchaseItem item) {
@@ -30,24 +31,25 @@ class FilmManager {
         return result;
     }
 
-    public PurchaseItem[] getAnyItem() {
+    public PurchaseItem[] showLatestFilm() {
+        int countShowLastMovie = 5;
 
-        PurchaseItem[] getAny = new PurchaseItem[items.length];
-        int any = 5;
-        if (items.length <= any) {
+        PurchaseItem[] item = new PurchaseItem[items.length];
+
+        if (items.length <= countShowLastMovie) {
             for (int i = 0; i < items.length; i++) {
                 int index = items.length - i - 1;
-                getAny[i] = items[index];
+                item[i] = items[index];
             }
-            return getAny;
+            return item;
         } else {
-            PurchaseItem[] getAny1 = new PurchaseItem[any];
-            for (int i = 0; i < any; i++) {
+            PurchaseItem[] item1 = new PurchaseItem[countShowLastMovie];
+            for (int i = 0; i < countShowLastMovie; i++) {
                 int index = items.length - i - 1;
-                getAny1[i] = items[index];
+                item1[i] = items[index];
             }
 
-            return getAny1;
+            return item1;
 
         }
     }

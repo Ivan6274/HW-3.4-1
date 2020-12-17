@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FilmManagerGetAllTest {
 
     @Test
-        void getAll5Item() {
+        void getAllItem() {
             FilmManager manager = new FilmManager();
 
             PurchaseItem first = new PurchaseItem(1, 1, "first", "http.first");
@@ -30,7 +30,7 @@ class FilmManagerGetAllTest {
             assertArrayEquals(expected, actual);
     }
     @Test
-    void getAll1Item() {
+    void getOneItem() {
         FilmManager manager = new FilmManager();
 
         PurchaseItem first = new PurchaseItem(1, 1, "first", "http.first");

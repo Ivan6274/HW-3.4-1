@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FilmManagerTest {
 
     @Test
-    void getAnyItemMax() {
+    void showLatestFilmMax() {
         FilmManager manager = new FilmManager();
 
         PurchaseItem first = new PurchaseItem(1, 1, "first", "http.first");
@@ -33,14 +33,16 @@ class FilmManagerTest {
         manager.add(nineth);
         manager.add(tenth);
 
-        PurchaseItem[] actual = manager.getAnyItem();
+
+
+        PurchaseItem[] actual = manager.showLatestFilm();
         PurchaseItem[] expected = new PurchaseItem[]{tenth, nineth, eighth, seventh, sixth};
 
         assertArrayEquals(expected, actual);
 
     }
     @Test
-    void getAnyItemMin() {
+    void showLatestFilmMin() {
         FilmManager manager = new FilmManager();
 
         PurchaseItem first = new PurchaseItem(1, 1, "first", "http.first");
@@ -52,7 +54,7 @@ class FilmManagerTest {
         manager.add(second);
         manager.add(third);
 
-        PurchaseItem[] actual = manager.getAnyItem();
+        PurchaseItem[] actual = manager.showLatestFilm();
         PurchaseItem[] expected = new PurchaseItem[]{third,second,first};
 
         assertArrayEquals(expected, actual);
